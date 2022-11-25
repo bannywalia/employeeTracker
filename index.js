@@ -1,5 +1,5 @@
 //DEPENDENCIES ==================================
-const mysql = require("mysql");
+const mysql = require("mysql2");
 const inquirer = require("inquirer");
 
 
@@ -8,10 +8,13 @@ const inquirer = require("inquirer");
 const connection = mysql.createConnection({
     host: "localhost",
 
-    port: 3301,
+    // Your port; if not 3306
+    port: 3306,
 
+    // Your username
     user: "root",
 
+    // Your password
     password: "Killa*02",
     database: "employees"
 });
@@ -27,7 +30,7 @@ connection.connect(function(err) {
 
 //RUN THE CODE===============================================================================
 
-console.log("Initalized, Welcome!")
+console.log("hey!")
 
 //Run the App
 function init() {
@@ -55,6 +58,7 @@ function init() {
             ]
         })
         .then(function(answer) {
+            // console.log("hey!")
             switch (answer.action) {
                 case "View All Employees":
                     employeeAll();
@@ -109,6 +113,10 @@ function init() {
                     updateManager();
                     break;
 
+                    // case "Calculate Payroll":
+                    //     budgetSum();
+                    //     break;
+
                 case "exit":
                     connection.end();
                     break;
@@ -117,7 +125,9 @@ function init() {
 }
 
 
-// CODE TO MAKE THE APP FUNCTION
+// OUR CODE TO MAKE THE APP FUNCTION================================================================================================================
+
+// employeeAll() function to see all employee info
 
 function employeeAll() {
     var query = "SELECT * FROM employee";

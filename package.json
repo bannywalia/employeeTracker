@@ -1,18 +1,26 @@
 {
   "name": "employeetracker",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bannywalia/employeeTracker.git"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
+  "bugs": {
+    "url": "https://github.com/bannywalia/employeeTracker/issues"
+  },
+  "homepage": "https://github.com/bannywalia/employeeTracker#readme",
   "dependencies": {
+    "console.table": "^0.10.0",
     "express": "^4.18.2",
-    "fs": "^0.0.1-security",
-    "inquirer": "^9.1.4",
-    "mysql": "^2.18.1"
+    "inquirer": "^8.2.4",
+    "mysql2": "^2.3.3"
   }
 }
